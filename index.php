@@ -20,7 +20,18 @@
         <input type="text" name="password">
         <input type="submit" value="envoyer">
     </form>
-    <?php require("ex2/inclogin.php");?>
+    <?php require("ex2/inclogin.php"); //$_SERVER["HTTP_ACCEPT_LANGUAGE"]?>
+    <?php 
+    $langue = $_SERVER["HTTP_ACCEPT_LANGUAGE"];
+    var_dump($langue);
+    $lang ="fr";
+    $missing = "txt not found";
+    if (strpos($langue, "en")===0) {
+        require("ex3/en.php");
+    }else {
+        require("ex3/fr.php");
+    }
+    ?>
     <?php 
     if (!isset($_SESSION['toto']) && !isset($_SESSION['password'])) :
         
@@ -28,7 +39,10 @@
         <p><?php echo $_SESSION['toto']?></p>
         <p><?php echo $_SESSION['password']?></p>
     <?php endif ?>
-    
+
+
+    <p><?php echo $text["title"]?></p>
+    <p><?php echo $text["subtitle"]?></p>
 
 </body>
 </html>
