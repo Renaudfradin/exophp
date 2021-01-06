@@ -23,8 +23,13 @@
         <input type="text" name="password">
         <input type="submit" value="envoyer">
     </form>
+    <form action="" method="POST">
+        <input type="text" name="totoInscrip">
+        <input type="text" name="passwordInscrip">
+        <input type="submit" value="inscription">
+    </form>
     <?php require("ex2/inclogin.php");?>
-    
+
     <?php 
     if (!isset($_SESSION['toto']) && !isset($_SESSION['password'])) :
         
