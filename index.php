@@ -70,8 +70,12 @@
         </form>
     <p><?= $result ?></p>
     
-
+    <!-- EXO6 -->
+    <?php
+    require("ex6/get.php");
+    ?>
     
+    <?= $getCSV ?>
 
 </body>
 </html>
